@@ -6,9 +6,6 @@
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/DeFlanko/weather-chart-card?style=flat-square)](https://github.com/DeFlanko/weather-chart-card/releases/latest)
 ![GitHub downloads](https://img.shields.io/github/downloads/DeFlanko/weather-chart-card/total?style=flat-square)
 
-![weather-chart-card](https://github.com/mlamberts78/weather-chart-card/assets/93537082/bd5b9f6e-4125-4a19-9773-463e6d054bce)
-![15-days](https://github.com/mlamberts78/weather-chart-card/assets/93537082/f4de6060-7005-4a6d-b1f3-3aa17c856c73)
-
 ## Installation
 
 ### One-click install with HACS
