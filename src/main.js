@@ -220,8 +220,14 @@ subscribeForecastEvents() {
   disconnectedCallback() {
     super.disconnectedCallback();
     this.detachResizeObserver();
+    this.unsubscribeForecastEvents();
+  }
+
+  unsubscribeForecastEvents() {
     if (this.forecastSubscriber) {
-      this.forecastSubscriber.then((unsub) => unsub());
+      const subscriber = this.forecastSubscriber;
+      this.forecastSubscriber = undefined;
+      subscriber.then((unsub) => unsub()).catch(() => {});
     }
   }
 
@@ -398,9 +404,7 @@ async updated(changedProperties) {
     const autoscrollChanged = oldConfig && this.config.autoscroll !== oldConfig.autoscroll;
 
     if (entityChanged || forecastTypeChanged) {
-      if (this.forecastSubscriber && typeof this.forecastSubscriber === 'function') {
-        this.forecastSubscriber();
-      }
+      this.unsubscribeForecastEvents();
 
       this.subscribeForecastEvents();
     }
